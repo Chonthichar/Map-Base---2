@@ -1,10 +1,10 @@
 on:
   push:
     branches:
-      - master*
+      - master/*
 
 jobs:
-  publishes:
+  publish:
     runs-on: ubuntu-latest
     permissions:
       id-token: write
