@@ -3,4 +3,6 @@ import ReactDOM from "react-dom/client";
 
 const root = ReactDOM.createRoot(document.getElementById("root")!);
 
-root.render(<h1> now Hello React</h1>)
+import {MapApplication} from './components/application/mapApplication';
+
+root.render(<MapApplication/>)
