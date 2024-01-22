@@ -25,7 +25,7 @@ export function MapApplication() {
     }, []);
 
     return <>
-        <header><h1>Application</h1></header>
+        <header><h1>Application 2</h1></header>
         <nav>Actions</nav>
         <main ref={mapRef}>Here is the map</main>
     </>;
