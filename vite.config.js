@@ -1,7 +1,8 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
+// https://vitejs.dev/config/
 export default defineConfig({
-    base: '/',
-    // ... any other configurations you might need
+    plugins: [react()],
+    base: "https://chonthichar.github.io/Map-Base---2/",
 });
-//run build
