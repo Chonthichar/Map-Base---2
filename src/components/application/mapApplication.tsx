@@ -13,36 +13,35 @@ import { Layer } from "ol/layer";
 useGeographic();
 
 const map = new Map({
-    view: new View({
-        center: [10, 59],
-        zoom: 8,
-    }),
+  view: new View({
+    center: [10, 59],
+    zoom: 8,
+  }),
 });
 
 export function MapApplication() {
-    const [layers, setLayers] = useState<Layer[]>([
-        new TileLayer({ source: new OSM() }),
-    ]);
+  const [layers, setLayers] = useState<Layer[]>([
+    new TileLayer({ source: new OSM() }),
+  ]);
 
-    const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
-    useEffect(() => {
-        map.setLayers(layers);
-    }, [layers]);
+  const mapRef = useRef() as MutableRefObject<HTMLDivElement>;
+  useEffect(() => {
+    map.setLayers(layers);
+  }, [layers]);
 
-    useEffect(() => {
-        map.setTarget(mapRef.current);
-    }, []);
+  useEffect(() => {
+    map.setTarget(mapRef.current);
+  }, []);
 
-    return (
-        <>
-            <header>
-                <h1>Map Application</h1>
-            </header>
-            <nav>
-                <KommuneLayerCheckbox setLayers={setLayers} />
-            </nav>
-            <main ref={mapRef}></main>
-        </>
-    );
+  return (
+    <>
+      <header>
+        <h1>Map Application</h1>
+      </header>
+      <nav>
+        <KommuneLayerCheckbox setLayers={setLayers} map={map} />
+      </nav>
+      <main ref={mapRef}></main>
+    </>
+  );
 }
-//Hey
